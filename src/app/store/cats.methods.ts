@@ -8,7 +8,6 @@ import { CatsState } from './cats.store';
 import { CatsService } from '../services/cats.service';
 import { inject } from '@angular/core';
 import { rxMethod } from '@ngrx/signals/rxjs-interop';
-import { pid } from 'process';
 import { pipe, switchMap } from 'rxjs';
 import { tapResponse } from '@ngrx/operators';
 
@@ -16,7 +15,7 @@ export function withCatsMethods() {
   return signalStoreFeature(
     { state: type<CatsState>() },
     withMethods((state, catsService = inject(CatsService)) => ({
-      getRandomCats: rxMethod<any>(
+      loadRandomCats: rxMethod<any>(
         pipe(
           switchMap(async (limit) => {
             patchState(state, { loading: true });
