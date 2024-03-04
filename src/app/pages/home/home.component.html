@@ -1,0 +1,8 @@
+@for (item of $cats | async; track item.id) {
+    <card [rounded]="true">
+        @if(item.url) {
+            <img cardMedia width="300px" height="100%" [src]="item?.url" alt="">  
+        }
+    </card>
+}
+

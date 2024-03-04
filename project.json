@@ -2,7 +2,7 @@
   "name": "signals",
   "$schema": "node_modules/nx/schemas/project-schema.json",
   "projectType": "application",
-  "prefix": "signals",
+  "prefix": "kk",
   "sourceRoot": "./src",
   "tags": [],
   "targets": {
